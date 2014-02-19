@@ -31,17 +31,17 @@ a:hover{color:#3366cc;text-decoration:none;}
  <script type="text/javascript">
  $(function() {
 		//获得文章列表
-		getArticleList("profile",450,{aid:"jlb.profile",start:'0',offset:'1'}, 1);
-		getArticle_zxzx("news",14,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
-		getArticleList("service",18,{aid:"jlb.service",start:'0',offset:'6'}, 2);
-		getArticleList("support",18,{aid:"jlb.support",start:'0',offset:'6'}, 2);
-		getArticleList("download",21,{aid:"jlb.download",start:'0',offset:'6'}, 2);
-		getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
+		getArticleList("profile",450,{aid:"innovation.profile",start:'0',offset:'1'}, 1);
+		getArticle_zxzx("news",14,{aid:"innovation.information ",start:'0',offset:'6'}, 2);
+		getArticleList("service",18,{aid:"innovation.service",start:'0',offset:'6'}, 2);
+		getArticleList("support",18,{aid:"innovation.support",start:'0',offset:'6'}, 2);
+		getArticleList("download",21,{aid:"innovation.download",start:'0',offset:'6'}, 2);
+		getArticle_cgal("case",21,{aid:"innovation.case",start:'0',offset:'16'}, 3);
 		});
  
  /* 成功案例 插件*/
  function getArticle_cgal(divid,size,opt){
-		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/jlb/list.jsp?cid="+opt.aid);
+		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/innovation/list.jsp?cid="+opt.aid);
 		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
 				opt, 
 				function(json){
@@ -54,7 +54,7 @@ a:hover{color:#3366cc;text-decoration:none;}
 							var image = json.rows[i].image!=""?json.rows[i].image:"images/jctp_01.jpg";
 							var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
 							var datetime = json.rows[i].createTime.substr(0,10);
-							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
+							var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
 							str=$("#"+divid).html()+"<li><a href=\""+url+"\"><img width=\"160\" height=\"118\" alt=\""+json.rows[i].title+"\" src=\""+image+"\"/></a><span>"+title+"</span></li>";
 							$("#"+divid).html(str);
 						}
@@ -71,7 +71,7 @@ a:hover{color:#3366cc;text-decoration:none;}
 	};
  /* 最新资讯插件*/
  function getArticle_zxzx(divid,size,opt){
-		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/jlb/list.jsp?cid="+opt.aid);
+		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/innovation/list.jsp?cid="+opt.aid);
 		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
 				opt, 
 				function(json){
@@ -84,7 +84,7 @@ a:hover{color:#3366cc;text-decoration:none;}
 							var image = json.rows[i].image!=""?json.rows[i].image:"images/jctp_01.jpg";
 							var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
 							var datetime = json.rows[i].createTime.substr(0,10);
-							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
+							var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
 							str=$("#"+divid).html()+"<li><span class=\"timescroll\">"+datetime+"</span><a href=\""+url+"\">"+title+"</a></li>";
 							$("#"+divid).html(str);
 						}
@@ -106,22 +106,22 @@ a:hover{color:#3366cc;text-decoration:none;}
 
 <body>
 <div class="body">
-<%@ include file="/jlb/include/top.jsp" %>
-<p id="back-to-top"><a href="#top"><span style="background: url('jlb/images/top.png');"></span></a></p>
+<%@ include file="/innovation/include/top.jsp" %>
+<p id="back-to-top"><a href="#top"><span style="background: url('innovation/images/top.png');"></span></a></p>
 <div class="con1">
 <div class="con2">
 <div id="hotpic">
         <div id="NewsPic">
             <a target="_blank" href="#" style="visibility: visible; display: block;">
-                <img width="793" height="307" src="<%=request.getContextPath()%>/jlb/images/1.jpg" class="Picture" alt="测试用图片" title="第1张图片的说明文字" /></a>
+                <img width="793" height="307" src="<%=request.getContextPath()%>/innovation/images/1.jpg" class="Picture" alt="测试用图片" title="第1张图片的说明文字" /></a>
             <a style="visibility: hidden; display: none;" target="_blank" href="#">
-                <img class="Picture" src="<%=request.getContextPath()%>/jlb/images/2.jpg" style="width: 793px; height: 307px;" alt="测试用图片" title="第2张图片的说明文字" /></a>
+                <img class="Picture" src="<%=request.getContextPath()%>/innovation/images/2.jpg" style="width: 793px; height: 307px;" alt="测试用图片" title="第2张图片的说明文字" /></a>
             <a style="visibility: hidden; display: none;" target="_blank" href="#">
-                <img class="Picture" src="<%=request.getContextPath()%>/jlb/images/3.jpg" style="width: 793px; height: 307px;" alt="测试用图片" title="第3张图片的说明文字" /></a>
+                <img class="Picture" src="<%=request.getContextPath()%>/innovation/images/3.jpg" style="width: 793px; height: 307px;" alt="测试用图片" title="第3张图片的说明文字" /></a>
             <a style="visibility: hidden; display: none;" target="_blank" href="#">
-                <img class="Picture" src="<%=request.getContextPath()%>/jlb/images/4.jpg" style="width: 793px; height: 307px;" alt="测试用图片" title="第4张图片的说明文字" /></a>
+                <img class="Picture" src="<%=request.getContextPath()%>/innovation/images/4.jpg" style="width: 793px; height: 307px;" alt="测试用图片" title="第4张图片的说明文字" /></a>
             <a style="visibility: hidden; display: none;" target="_blank" href="#">
-                <img width="793px" height="307px" src="<%=request.getContextPath()%>/jlb/images/5.jpg" class="Picture" alt="测试用图片" title="第5张图片的说明文字" /></a>
+                <img width="793px" height="307px" src="<%=request.getContextPath()%>/innovation/images/5.jpg" class="Picture" alt="测试用图片" title="第5张图片的说明文字" /></a>
             <div class="Nav">
                 <span class="Normal">5</span>
                 <span class="Normal">4</span>
@@ -137,9 +137,9 @@ a:hover{color:#3366cc;text-decoration:none;}
 <div class="con3">
 <h2>电脑医生到您家</h2>
 <ul>
-<li><h3><a href="#"></a>各大品牌笔记本<p>维修成功率高</p><p>清理技术好</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_03.jpg" /></a></li>
-<li><h3><a href="#"></a>台式电脑维修<p>上门安装系统</p><p>疑难杂症维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_04.jpg" /></a></li>
-<li><h3><a href="#"></a>显示器维修<p>液晶显示屏</p><p>LED屏幕维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_05.jpg" /></a></li>
+<li><h3><a href="#"></a>各大品牌笔记本<p>维修成功率高</p><p>清理技术好</p></h3><a href="#"><img src="<%=request.getContextPath()%>/innovation/images/pic_03.jpg" /></a></li>
+<li><h3><a href="#"></a>台式电脑维修<p>上门安装系统</p><p>疑难杂症维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/innovation/images/pic_04.jpg" /></a></li>
+<li><h3><a href="#"></a>显示器维修<p>液晶显示屏</p><p>LED屏幕维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/innovation/images/pic_05.jpg" /></a></li>
 </ul>
 </div>
 </div>
@@ -157,7 +157,7 @@ a:hover{color:#3366cc;text-decoration:none;}
 <div class="con7">
 	<!-- 最新资讯 -->
 	<div class="con8" id="scrollDiv">
-	<p class="xmore"><a href="#" id="newsMore"><img src="<%=request.getContextPath()%>/jlb/images/more_01.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="newsMore"><img src="<%=request.getContextPath()%>/innovation/images/more_01.png" border="0" /></a></p>
 	<!-- <ul id="news"></ul> -->
 	<div id="marquee6">
 		<ul id="news">
@@ -166,19 +166,19 @@ a:hover{color:#3366cc;text-decoration:none;}
 	</div>
 	<!-- 服务项目 -->
 	<div class="con9">
-	<p class="xmore"><a href="#" id="serviceMore"><img src="<%=request.getContextPath()%>/jlb/images/more_02.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="serviceMore"><img src="<%=request.getContextPath()%>/innovation/images/more_02.png" border="0" /></a></p>
 		<ul id="service"></ul>
 	</div>
 </div>
 <div class="con10">
 	<!-- 技术支持 -->
 	<div class="con11">
-	<p class="xmore"><a href="#" id="supportMore"><img src="<%=request.getContextPath()%>/jlb/images/more_03.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="supportMore"><img src="<%=request.getContextPath()%>/innovation/images/more_03.png" border="0" /></a></p>
 	<ul id="support"></ul>
 	</div>
 	<!-- 软件下载 -->
 	<div class="con12">
-	<p class="xmore"><a href="#" id="downloadMore"><img src="<%=request.getContextPath()%>/jlb/images/more_04.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="downloadMore"><img src="<%=request.getContextPath()%>/innovation/images/more_04.png" border="0" /></a></p>
 	<ul id="download"></ul>
 	</div>
 </div>
@@ -193,8 +193,8 @@ a:hover{color:#3366cc;text-decoration:none;}
 </div>
 </div>
 <div id="footer">
-<%@ include file="/jlb/include/foot.jsp" %>
+<%@ include file="/innovation/include/foot.jsp" %>
 </div>
-<%@ include file="/jlb/include/cs.jsp" %>
+<%@ include file="/innovation/include/cs.jsp" %>
 </body>
 </html>
