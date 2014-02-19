@@ -45,20 +45,14 @@
 	getArticleList("bottom",1000,{aid:"jlb.foot",start:'0',offset:'6'}, 3);
 	getArticleList("link",1000,{aid:"jlb.link",start:'0',offset:'6'}, 3);
 </script>
-<div class="links" id="link">
-	
-</div>
-<div class="footer">
-<ul>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_01.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_02.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_03.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_04.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_05.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_06.png" /></li>
-</ul>
-</div>
-<div class="footer_text" id="bottom">
-</div>
+
+ <tr bgcolor="A80023" class="font01"> 
+    <td height="72" colspan="2" valign="top"> 
+      <div align="center"><br>
+        <font color="#FFFFFF">地址：吉林省长春市延安大街2055号 邮编：130012 联系我们 吉ICP备05002091 
+        ALEXA排名 360网站安全检测平台 网络中心官方微博<br>
+        <br>
+        版权所有：长春工业大学创新创业中心 CopyRight2012 ChangChun University Of Teachnology</font></div></td>
+  </tr>
  
   

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>金兰宝科技有限公司</title>
+<title>创新创业平台</title>
 <%@ include file="/include/include.jsp" %>
   <style type="text/css">
 #scrollDiv{min-height:25px;line-height:35px;}
