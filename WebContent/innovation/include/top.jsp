@@ -24,10 +24,12 @@ function getArticleList(divid,size,opt,type){
 						var text = size!=null&&size!=""&&json.rows[i].text.length>size?json.rows[i].text.substr(0,size)+"...":json.rows[i].text;
 						var datetime = json.rows[i].createTime.substr(0,10);
 						var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
+						var imageUrl = "<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg";
 						if(type == 1){
 							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+text+"</li>";
 						}else if(type == 2){
-							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"</a></li>"; 
+							str=$("#"+divid).html()+"<tr><td height=\"22\" colspan=\"2\"><img src="+imageUrl+" width=\"11\" height=\"11\">"+title+" </td></tr>";
+							
 						} else{
 							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+""; 
 						}

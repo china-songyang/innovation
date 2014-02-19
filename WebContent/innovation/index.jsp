@@ -16,7 +16,7 @@ a:hover{color:#3366cc;text-decoration:none;}
  <script type="text/javascript">
  $(function() {
 		//获得文章列表
-		getArticleList("profile",450,{aid:"innovation.profile",start:'0',offset:'1'}, 1);
+		getArticleList("practice",20,{aid:"innovation.practice",start:'0',offset:'6'}, 2);
 		getArticle_zxzx("news",14,{aid:"innovation.information ",start:'0',offset:'6'}, 2);
 		getArticleList("service",18,{aid:"innovation.service",start:'0',offset:'6'}, 2);
 		getArticleList("support",18,{aid:"innovation.support",start:'0',offset:'6'}, 2);
@@ -244,30 +244,8 @@ return document.getElementById(id);
                 <td width="73%"><img src="<%=request.getContextPath()%>/innovation/images/index_cxsj.jpg" width="257" height="32"></td>
                 <td width="27%"><a href="more.html"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
               </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                <td height="22" colspan="2"><img src="<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg" width="11" height="11"> 
-                  <a href="show.html">创新实践创新实践创新实践创新实践创新实践创新实践</a> </td>
-              </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                <td height="22" colspan="2"><img src="<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg" width="11" height="11"> 
-                  创新实践创新实践创新实践创新实践创新实践创新实践 </td>
-              </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                <td height="22" colspan="2"><img src="<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg" width="11" height="11"> 
-                  创新实践创新实践创新实践创新实践创新实践创新实践 </td>
-              </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                <td height="22" colspan="2"><img src="<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg" width="11" height="11"> 
-                  创新实践创新实践创新实践创新实践创新实践创新实践 </td>
-              </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                <td height="22" colspan="2"><img src="<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg" width="11" height="11"> 
-                  创新实践创新实践创新实践创新实践创新实践创新实践 </td>
-              </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                <td height="22" colspan="2"><img src="<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg" width="11" height="11"> 
-                  创新实践创新实践创新实践创新实践创新实践创新实践 </td>
-              </tr>
+             <tr id="practice"></tr>
+              
             </table>
             &nbsp;</td>
           <td width="50%" valign="top"><table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="font_dl">
