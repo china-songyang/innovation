@@ -146,9 +146,11 @@ CREATE TABLE `web_article` (
   `image` varchar(500) default NULL,
   `sort` int(11) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `web_article` */
+
+insert  into `web_article`(`id`,`cid`,`title`,`text`,`type`,`typeName`,`state`,`stateName`,`count`,`createTime`,`operater`,`operaterName`,`image`,`sort`) values (1,'innovation.practice','123123123','123123123','article.state.normal','普通','visible.true','显示',0,'2014-02-19 23:46:09','system','开发维护员','',1);
 
 /*Table structure for table `web_content` */
 
