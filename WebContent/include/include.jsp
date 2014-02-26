@@ -16,6 +16,7 @@
  <script type="text/javascript" src="<%=request.getContextPath()%>/innovation/js/imgscroll.js"></script>
  <script type="text/javascript" src="<%=request.getContextPath()%>/innovation/js/back-to-top.js"></script>
  <script type="text/javascript" src="<%=request.getContextPath()%>/innovation/js/Marquee.js"></script> 
+
  <!-- 创新创业平台 -->
   <link href="<%=request.getContextPath()%>/innovation/css/css.css" rel="stylesheet" type="text/css" />
   <link href="<%=request.getContextPath()%>/innovation/css/lrtk.css" rel="stylesheet" type="text/css" />
