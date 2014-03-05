@@ -7,8 +7,77 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>金兰宝科技有限公司</title>
-<%@ include file="../include/include.jsp" %>
+<title>教师类导师介绍</title>
+<%@ include file="/include/include.jsp" %>
+  <script type="text/javascript">
+ $(function() {
+		//获得文章列表
+		getArticleList("teacher",20,{aid:"innovation.teacher",start:'0',offset:'15'}, 2);
+		getArticleList("jyteacher",20,{aid:"innovation.jyteacher",start:'0',offset:'15'}, 2);
+ });
+ </script>
+<!-- 创新平台js方法 -->
+ <script type="text/javascript">
+<!--
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+function mopen(id)
+{	
+	mcancelclosetime();
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+
+}
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+document.onclick = mclose; 
+// -->
+</script>
+<script language="javascript">
+	function fast_xy(){
+	    var url="";
+		var obj = document.getElementById('fast_xy');
+	    for(var i=0;i<obj.options.length;i++){
+		   if(obj.options[i].selected){
+		   url=obj.options[i].value;
+           break;
+		   }
+        }
+		if(url!='none'){
+			window.open(url);	
+		}
+	}
+
+	function fast_net(){
+		var obj = document.getElementById('fast_net');
+	    for(var i=0;i<obj.options.length;i++){
+		   if(obj.options[i].selected){
+		   url=obj.options[i].value;
+           break;
+		   }
+        }
+		if(url!='none'){
+			window.open(url);	
+		}
+	}
+
+</script>
  <script type="text/javascript">
 var type='<%=request.getParameter("type")%>'
 var cid = '<%=request.getParameter("cid")%>';
@@ -186,9 +255,8 @@ getArticle_cgal("case",21,{aid:"innovation.case",start:'0',offset:'100'}, 3);
 <body>
 <div class="body">
 <%@ include file="/innovation/include/top.jsp" %>
-<p id="back-to-top"><a href="#top"><span style="background: url('./images/top.png');"></span></a></p>
+<%-- <p id="back-to-top"><a href="#top"><span style="background: url('./images/top.png');"></span></a></p>
 <div class="con20">
-<%@ include file="/innovation/include/left.jsp" %>
  		<div class="con22">
  			<div class="con22_top"></div>
            	  <div class="con22_main">
@@ -198,12 +266,104 @@ getArticle_cgal("case",21,{aid:"innovation.case",start:'0',offset:'100'}, 3);
             <div class="con22_bottom"></div>
         </div><!--右侧-->
 </div>
-<%@ include file="/innovation/include/roll.jsp" %>
-
+<%@ include file="/innovation/include/roll.jsp" %> --%>
+<br>
+<table width="959" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="168" valign="top"> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="border_all">
+        <tr> 
+          <td height="30" bgcolor="#AE000C"><div align="center" class="font_bt">创新导师</div></td>
+        </tr>
+       
+        <tr> 
+          <td height="22"><div align="center"> <a href="<%=request.getContextPath()%>/innovation/list.jsp?cid=innovation.jyteacher">创新教育导师</a> </div></td>
+        </tr>
+        <tr> 
+          <td height="22"><div align="center">创新实践导师</div></td>
+        </tr>
+      </table>
+      <br> <img src="images/more_pic.jpg" width="168" height="330"> <br> &nbsp;</td>
+    <td width="791" valign="top">
+	<table width="95%" align="right" border="0" cellpadding="0" cellspacing="0" class="border_all">
+        <tr>
+           <td height="26" bgcolor="a0a0a0" class="font01">
+		 
+		首页&gt;&gt;创新导师&gt;&gt;创新教育导师</td>
+        </tr>
+        <tr id="jyteacher"></tr>
+        <tr>
+          <tr id="teacher"></tr>
+          <!--   <td height="394" valign="top"> 
+            <table width="90%" align="center" border="0" cellpadding="0" cellspacing="2" class="font_dl">
+              <tr> 
+                <td width="74%" height="22">·<a href="show.html">学科建设工程首席教授:骆红云</a></td>
+                <td width="26%">2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·<a href="show.html">国立名师：张德江</a></td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·学科建设工程首席教授：张会轩</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·中青年骨干教师：王占礼</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·博士生导师：韩立强</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·主讲教授：韩立强</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·讲师：王龙天</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·特约讲师：李红喜</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·特约讲师：任立生</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·特约讲师：刘喜明</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·特约讲师：周振华</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·讲演名师：于燕</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">·讲演名师：吴化</td>
+                <td>2014-01-24</td>
+              </tr>
+              <tr> 
+                <td height="22">&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td height="22" colspan="2"><div align="right">&lt;&lt; 首页 &lt; 
+                    上页 下页 &gt; 末页 &gt;&gt;</div></td>
+              </tr>
+            </table>
+		  &nbsp;</td>
+ -->  
+        </tr>
+      </table>
+	&nbsp; </td>
+  </tr>
+ <%@ include file="/innovation/include/foot.jsp" %>
+</table>
 </div>
-<div id="footer">
-<%@ include file="/innovation/include/foot.jsp" %>
-</div>
-<%@ include file="/innovation/include/cs.jsp" %>
 </body>
 </html>

@@ -85,16 +85,11 @@ getArticle_cgal("case",21,{aid:"innovation.case",start:'0',offset:'16'}, 3);
 <span style="color:#606E7B;float:right;margin-right:50px;" >发布时间：<span id="time"></span></span>
 <br>
 <p id="content"></p>
-</div>
-<div class="con22_bottom"></div>
-</div>
+ </div>
+<div class="con22_bottom"></div></div>
 </div>
 <%@ include file="/innovation/include/roll.jsp" %>
-
-</div>
-<div id="footer">
-<%@ include file="/innovation/include/foot.jsp" %>
-</div>
-<%@ include file="/innovation/include/cs.jsp" %>
+</div><div id="footer">
+<%@ include file="/innovation/include/foot.jsp" %></div>
 </body>
 </html>
