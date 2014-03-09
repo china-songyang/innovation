@@ -70,26 +70,46 @@ getArticle_cgal("case",21,{aid:"innovation.case",start:'0',offset:'16'}, 3);
 
 </script>
 </head>
-<body>
-<div class="body">
-<!-- 头文件 -->
+<body leftmargin="0" topmargin="0">
 <%@ include file="/innovation/include/top.jsp" %>
-<p id="back-to-top"><a href="#top"><span style="background: url('./images/top.png');"></span></a></p>
-<div class="con20">
-<!-- 左侧文件 -->
-<%@ include file="/innovation/include/left.jsp" %>
-<div class="con22">
-<div class="con22_top"></div>
-<div class="con23_main">
-<h2 id="title"></h2>
-<span style="color:#606E7B;float:right;margin-right:50px;" >发布时间：<span id="time"></span></span>
 <br>
-<p id="content"></p>
- </div>
-<div class="con22_bottom"></div></div>
-</div>
-<%@ include file="/innovation/include/roll.jsp" %>
-</div><div id="footer">
+<table width="959" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="168" valign="top"> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="border_all">
+        <tr> 
+          <td height="30" bgcolor="#AE000C"><div align="center" class="font_bt">创新导师</div></td>
+        </tr>
+        <tr> 
+          <td height="22"><div align="center"><a href="more.html">创新教育导师</a></div></td>
+        </tr>
+        <tr> 
+          <td height="22"><div align="center"><a href="more.html">创新实践导师</a></div></td>
+        </tr>
+      </table>
+      <br> <img src="images/more_pic.jpg" width="168" height="330"> <br> &nbsp;</td>
+    <td width="791" valign="top">
+	<table width="95%" align="right" border="0" cellpadding="0" cellspacing="0" class="border_all">
+        <tr>
+          <td height="26" bgcolor="a0a0a0" class="font01">&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">首页</a>&gt;&gt;<a href="more.html">创新导师</a>&gt;&gt;创新教育导师</td>
+        </tr>
+        <tr>
+          <td height="394" valign="top"> 
+            <table width="90%" align="center" border="0" cellpadding="0" cellspacing="2" class="font_dl">
+              <tr> 
+                <td height="22"><div align="center" class="font01"><h2 style="font-size:16px;font-weight: bold;" id="title"></h2></div></td>
+              </tr>
+              <tr> 
+                <td height="22"><div align="center">发布时间：<span id="time"></span></div></td>
+              </tr>
+              <tr> 
+                <td height="334" valign="top"  style=font-size:14px;line-height:23px;margin:20px; id="content"></td>
+              </tr>
+            </table>
+		  &nbsp;</td>
+        </tr>
+      </table>
+	&nbsp; </td>
+  </tr>
 <%@ include file="/innovation/include/foot.jsp" %></div>
 </body>
 </html>

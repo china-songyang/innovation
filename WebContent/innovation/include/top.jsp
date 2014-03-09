@@ -25,48 +25,14 @@ function getArticleList(divid,size,opt,type){
 						var datetime = json.rows[i].createTime.substr(0,10);
 						var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
 						var imageUrl = "<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg";
+						var imageUrl2 = "<%=request.getContextPath()%>/innovation/images/new.gif";
 						if(type == 1){
-							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+text+"</li>";
+							str=$("#"+divid).html()+"<tr><td height=\"22\" colspan=\"2\"><a href=\""+url+"\"><img src="+imageUrl2+" width=\"27\" height=\"11\">&nbsp;"+text+" "+datetime+"</td></tr>";
 						}else if(type == 2){
 							str=$("#"+divid).html()+"<tr><td height=\"22\" colspan=\"2\"><img src="+imageUrl+" width=\"11\" height=\"11\"><a href=\""+url+"\">"+title+" </a></td></tr>";
 							
 						} else{
-							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+""; 
-						}
-						$("#"+divid).html(str);
-					}
-				}
-			}, 
-			"json");
-}
-function getArticlezxrd(divid,size,opt,type){
-	$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/innovation/list.jsp?cid="+opt.aid);
-	//获得文章列表
-
-	$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
-			opt, 
-			
-			function(json){
-				var str = "";
-				$("#"+divid).html(str);
-				var num = json.rows.length;
-				var aid = "";
-				if(num>0){
-					for(var i=0;i<num;i++) { 
-						var id = json.rows[i].id;
-						var image = json.rows[i].image;
-						var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
-						var text = size!=null&&size!=""&&json.rows[i].text.length>size?json.rows[i].text.substr(0,size)+"...":json.rows[i].text;
-						var datetime = json.rows[i].createTime.substr(0,10);
-						var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
-						var imageUrl = "<%=request.getContextPath()%>/innovation/images/index_dot_2.jpg";
-						if(type == 1){
-							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+text+"</li>";
-						}else if(type == 2){
-							str=$("#"+divid).html()+"<tr><td height=\"22\" colspan=\"2\"><a href=\""+url+"\">"+title+"</a> </td></tr>";
-							
-						} else{
-							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+""; 
+							str=$("#"+divid).html()+"&nbsp;&nbsp;<a href=\""+url+"\"><font color=\"#FFFFFF\">"+text+"</font></a>"+datetime+"<br><br>"; 
 						}
 						$("#"+divid).html(str);
 					}
@@ -87,7 +53,7 @@ function getArticlezxrd(divid,size,opt,type){
   </tr>
   <tr valign="top"> 
     <td colspan="2"> 
-      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table">
         <tr id="sddm"> 
           <td width="9%" height="48" align="center"><a href="<%=request.getContextPath()%>/innovation/index.jsp"><font color="#FFFFFF"> 首页</font></a></td>
           <td width="9%"><a href="#"  onmouseover="mopen('m1')" onmouseout="mclosetime()"><font color="#FFFFFF">工大创新<br>
@@ -115,7 +81,7 @@ function getArticlezxrd(divid,size,opt,type){
           <td width="9%"><a href="#" onmouseover="mopen('m5')" onmouseout="mclosetime()"><font color="#FFFFFF">创新导师</font></a> 
             <br>
 			<div id="m5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"> 
-              <a href="<%=request.getContextPath()%>/innovation/list.jsp?cid=innovation.jyteacher&">创新教育导师</a>
+              <a href="<%=request.getContextPath()%>/innovation/list.jsp?cid=innovation.jyteacher">创新教育导师</a>
                <a href="<%=request.getContextPath()%>/innovation/list.jsp?cid=innovation.sjteacher">创新实践导师</a>  </div>
 		  </td>
           <td width="14%"><a href="#" onmouseover="mopen('m6')" onmouseout="mclosetime()"><font color="#FFFFFF">创新创业论坛</font></a> 

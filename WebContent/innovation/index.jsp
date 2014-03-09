@@ -18,78 +18,12 @@ a:hover{color:#3366cc;text-decoration:none;}
 		//获得文章列表
 		getArticleList("practice",20,{aid:"innovation.practice",start:'0',offset:'6'}, 2);
 		getArticleList("teacher",20,{aid:"innovation.teacher",start:'0',offset:'6'}, 2);
-		getArticleList("harvest",14,{aid:"innovation.harvest ",start:'0',offset:'6'}, 2);
+		getArticleList("harvest",20,{aid:"innovation.harvest ",start:'0',offset:'6'}, 1);
 		getArticleList("education",18,{aid:"innovation.education",start:'0',offset:'6'}, 2);
 		getArticleList("notice",18,{aid:"innovation.notice",start:'0',offset:'6'}, 2);
-		getArticlezxrd("hot",18,{aid:"innovation.hot",start:'0',offset:'6'}, 2);
-		getArticle_zxzx("download",21,{aid:"innovation.download",start:'0',offset:'6'}, 2);
-		getArticle_cgal("case",21,{aid:"innovation.case",start:'0',offset:'16'}, 3);
+		getArticleList("hot",8,{aid:"innovation.hot",start:'0',offset:'100'}, 3);
 		});
  
- /* 成功案例 插件*/
- function getArticle_cgal(divid,size,opt){
-		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/innovation/list.jsp?cid="+opt.aid);
-		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
-				opt, 
-				function(json){
-					var str = "";
-					$("#"+divid).html(str);
-					var num = json.rows.length;
-					if(num>0){
-						for(var i=0;i<num;i++) {
-							var id = json.rows[i].id;
-							var image = json.rows[i].image!=""?json.rows[i].image:"images/jctp_01.jpg";
-							var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
-							var datetime = json.rows[i].createTime.substr(0,10);
-							var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
-							str=$("#"+divid).html()+"<a href=\""+url+"\"><img width=\"160\" height=\"118\" alt=\""+json.rows[i].title+"\" src=\""+image+"\"/></a><span>"+title+"</span></li>";
-							$("#"+divid).html(str);
-						}
-					}
-					
-					$(".scrollleft").imgscroll({
-						speed: 20,    //图片滚动速度
-						amount: 0,    //图片滚动过渡时间
-						width: 1,     //图片滚动步数
-						dir: "left"   // "left" 或 "up" 向左或向上滚动
-					});
-				}, 
-				"json");
-	};
- /* 最新资讯插件*/
- function getArticle_zxzx(divid,size,opt){
-		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/innovation/list.jsp?cid="+opt.aid);
-		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
-				opt, 
-				function(json){
-					var str = "";
-					$("#"+divid).html(str);
-					var num = json.rows.length;
-					if(num>0){
-						for(var i=0;i<num;i++) {
-							var id = json.rows[i].id;
-							var image = json.rows[i].image!=""?json.rows[i].image:"images/jctp_01.jpg";
-							var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
-							var datetime = json.rows[i].createTime.substr(0,10);
-							var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+opt.aid+"&did="+id;
-							str=$("#"+divid).html()+"<li><span class=\"timescroll\">"+datetime+"</span><a href=\""+url+"\">"+title+"</a></li>";
-							$("#"+divid).html(str);
-						}
-					}
-					
-					
-			
-					$('#marquee6').kxbdSuperMarquee({
-						isMarquee:true,
-						isEqual:false,
-						scrollDelay:30,
-						controlBtn:{up:'#goUM',down:'#goDM'},
-						direction:'up'
-					});
-				}, 
-				"json");
-	};
-	
  </script>
  
  <!-- 创新平台js方法 -->
@@ -190,7 +124,7 @@ document.onclick = mclose;
         <!-- 最新热点 -->
           <td height="47"><div align="right"><img src="<%=request.getContextPath()%>/innovation/images/index_zxrd.jpg" width="217" height="42"></div></td>
          </tr>
-            </tr>
+            <tr>
         <tr> 
           <td height="239" background="<%=request.getContextPath()%>/innovation/images/index_zxrd_bg.jpg"> 
            
@@ -199,8 +133,10 @@ document.onclick = mclose;
 			    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
                   <tr>
                     <td height="220"><br>
-                      <div class="font_foot01">
-                          <tr id="hot"></tr></div><tr></table>
+                      <div class="font_foot01" id="hot">
+                     </div>
+                    </td>
+                  </tr></table>
 			    <div id="demo2"></div>
           </div>
 			</div>
@@ -231,22 +167,22 @@ return document.getElementById(id);
             <table width="95%" border="0" cellpadding="0" cellspacing="0" class="font_dl">
               <tr> 
                 <td width="73%"><img src="<%=request.getContextPath()%>/innovation/images/index_cxsj.jpg" width="257" height="32"></td>
-               
-                <td width="27%"><a href="<%=request.getContextPath()%>/innovation/list.jsp?cid=innovation.teacher"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
+                <td width="27%"><a href="#" id="practiceMore"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
               </tr>
- 
               <tr id="practice"></tr>
-              <!-- 创新实践 -->
             </table>
             &nbsp;</td>
+           <!-- 创新实践 end -->
+           
+            <!-- 重点成果 -->
           <td width="50%" valign="top"><table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="font_dl">
               <tr> 
                 <td width="77%"><img src="<%=request.getContextPath()%>/innovation/images/index_zdcgzs.jpg" width="260" height="32"></td>
-                
-                <td width="23%"><a href="more.html"><img src="<%=request.getContextPath()%>/innovation/images/index_zdcgzs_more.jpg" width="87" height="32" border="0"></a></td>
-                 <tr id="harvest"></tr>
-                  </tr>
-            </table></td>
+                <td width="23%"><a href="#" id="harvestMore"><img src="<%=request.getContextPath()%>/innovation/images/index_zdcgzs_more.jpg" width="87" height="32" border="0"></a></td>
+                <tr id="harvest"></tr>
+            </table>
+          </td>
+          <!-- 重点成果 -->
         </tr>
       </table>
       
@@ -281,31 +217,26 @@ return document.getElementById(id);
       <table border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr> 
           <td width="51%" height="168" valign="top"> 
+          	<!-- 创新教育 -->
             <table width="95%" border="0" cellpadding="0" cellspacing="0" class="font_dl">
               <tr> 
-              <!-- 创新教育 -->
                 <td width="72%"><img src="<%=request.getContextPath()%>/innovation/images/index_cxjy.jpg" width="257" height="32"></td>
-         
-                <td width="28%"><a href="more.html"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
-               <tr id="education">
+                <td width="28%"><a href="#" id="educationMore"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
+                <tr id="education">
               </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-                              </tr>
-              <tr background="<%=request.getContextPath()%>/innovation/images/index_line_bg.jpg"> 
-               </tr>
-             </tr>
             </table>
-            
           </td>
+          <!-- 创新教育 end -->
+          
+          <!-- 通知通告 -->
           <td width="49%" valign="top"><table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="font_dl">
               <tr> 
                 <td width="82%"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg.jpg" width="260" height="32"></td>
-          
-                <td width="18%"><a href="more.html"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
-              
-               <tr id="notice"></tr></tr>
-             
-            </table></td>
+                <td width="18%"><a href="#" id="noticeMore"><img src="<%=request.getContextPath()%>/innovation/images/index_tztg_more.jpg" width="93" height="32" border="0"></a></td>
+                <tr id="notice"></tr>
+            </table>
+          </td>
+          <!-- 通知通告 end -->
         </tr>
       </table></td>
     <td height="173" valign="top">
