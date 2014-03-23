@@ -75,10 +75,16 @@ document.onclick = mclose;
 var type='<%=request.getParameter("type")%>'
 var cid = '<%=request.getParameter("cid")%>';
 var did = '<%=request.getParameter("did")%>';
+var pName = '<%=request.getParameter("pName")%>';
 var opt={aid:cid,start:'0',offset:'25'};
 $(function() {
 	getArticleListByPage(cid,1,0);
 	getMenuTitle(cid);
+	});
+	
+$(function() {
+	//获得文章列表
+	getContentList("left",20,{aid:cid,pname: pName,start:'0',offset:'6'});
 	});
 	
 function getMenuTitle(cid){
@@ -150,7 +156,7 @@ function getArticleListByPage(aid,pageNo,start){
 							var title = json.rows[i].title;
 							var datetime = json.rows[i].createTime.substr(0,10);
 							var url="<%=request.getContextPath()%>/innovation/detail.jsp?cid="+cid+"&did="+id;
-							str=$("#artlist").html()+"<tr><td height=\"22\">.<a href=\""+url+"\">"+title+"</a></td>";
+							str=$("#artlist").html()+"<tr><td height=\"22\">&rarr;<a href=\""+url+"\">"+title+"</a></td>";
 							str+="<td>"+datetime+"</td></tr>";
 							$("#artlist").html(str);
 						}
@@ -175,23 +181,15 @@ function getArticleListByPage(aid,pageNo,start){
 <%@ include file="/innovation/include/top.jsp" %>
 <br>
 <table width="959" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-    <td width="168" valign="top"> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="border_all">
-        <tr> 
-          <td height="30" bgcolor="#AE000C"><div align="center" class="font_bt">创新导师</div></td>
-        </tr>
-        <tr> 
-          <td height="22"><div align="center"><a href="more.html">创新教育导师</a></div></td>
-        </tr>
-        <tr> 
-          <td height="22"><div align="center"><a href="more.html">创新实践导师</a></div></td>
-        </tr>
+  	<tr> 
+    	<td width="168" valign="top"> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="border_all">
+        	<tr id="left"></tr>
       </table>
       <br> <img src="images/more_pic.jpg" width="168" height="330"> <br> &nbsp;</td>
     <td width="791" valign="top">
 	<table width="95%" align="right" border="0" cellpadding="0" cellspacing="0" class="border_all">
         <tr>
-          <td height="26" bgcolor="a0a0a0" class="font01">&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">首页</a>&gt;&gt;<a href="more.html">创新导师</a>&gt;&gt;创新教育导师</td>
+          <td height="26" bgcolor="a0a0a0" class="font01"></td>
         </tr>
         <tr>
           <td height="394" valign="top"> 

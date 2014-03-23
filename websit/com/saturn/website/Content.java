@@ -131,6 +131,15 @@ public class Content {
 				mapping, Content.class, start, offset);
 	}
 	
+	
+	public static ListData<Content> getByCidByPid(String pid, String start, String offset) {
+			
+			return SimpleDaoTemplate.query("SELECT * FROM web_content WHERE parentId = '" + pid + "' order by sort asc",
+					new DymaticCondition(),
+					mapping, Content.class, start, offset);
+			
+		}
+
 	public static ListData<Content> getRoot(Content vo, String start,
 			String offset, String orderBy, String order) {
 		//指定值对象类型(VOClass)。例子VOClass=User
